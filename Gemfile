@@ -61,3 +61,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+
+# Gemfile
+gem 'devise', github: 'heartcombo/devise', branch: 'main'
