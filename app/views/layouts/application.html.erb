@@ -14,6 +14,12 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-minimal.min.css" integrity="sha512-M+kD2oyDhWByV8xUWycuMYgR0Rm4q+OtyMTuxLaM5goa/YiIY5BymS9+XqekRHFxOmB+R+48Nkv85t59uXRPvw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js" integrity="sha512-QUiMIuP2Eq/llwXTxDMf0abR2wdTz9x0nxRYLBO3Sbw8yboVtTbFzCko0KM6JjHJDKQ/XJJ9C29wK5OPYPLOPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <%= stylesheet_link_tag "odometer-theme-plaza", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "odometer", "data-turbo-track": "reload", defer: true %>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
@@ -35,10 +41,10 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="sponsors">For Sponsors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="SignIn">SignIn</a>
             </li>
           </ul>
         </div>

@@ -1,18 +1,22 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="hero"
 export default class extends Controller {
-  static targets = ["countdown", "participant"]
+  static targets = ["countdown"]
 
   connect() {
+    console.log("🚀 HeroController connected")
     this.participants = 123
     this.startCountdown()
-    this.updateParticipants()
+
+    // Odometer expects .innerText update
+    this.odometerEl = document.getElementById("participant-odometer")
+    this.odometerEl.innerText = this.participants
+    this.startRolling()
   }
 
   startCountdown() {
     this.updateCountdown()
-    this.countdownInterval = setInterval(() => this.updateCountdown(), 1)
+    this.countdownInterval = setInterval(() => this.updateCountdown(), 1000)
   }
 
   updateCountdown() {
@@ -34,28 +38,10 @@ export default class extends Controller {
     this.countdownTarget.innerText = `Hacking begins in: ${days}d ${hours}h ${minutes}m ${seconds}s`
   }
 
-  updateParticipants() {
+  startRolling() {
     setInterval(() => {
-      this.participants += Math.floor(Math.random() * 2)
-      this.renderRollingNumber(this.participantTarget, this.participants)
-    }, 1000)
-  }
-
-  renderRollingNumber(container, number) {
-    const numStr = number.toString().padStart(3, "0")
-    container.innerHTML = "" // Clear existing digits
-
-    for (let digit of numStr) {
-      const digitSpan = document.createElement("span")
-      digitSpan.classList.add("digit")
-      digitSpan.textContent = digit
-      digitSpan.style.transform = "translateY(-100%)"
-      container.appendChild(digitSpan)
-
-      // Trigger animation after a short delay (forces transition)
-      requestAnimationFrame(() => {
-        digitSpan.style.transform = "translateY(0)"
-      })
-    }
+      this.participants += Math.floor(Math.random() * 3)
+      this.odometerEl.innerText = this.participants
+    }, 3000)
   }
 }
