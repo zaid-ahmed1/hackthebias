@@ -1,0 +1,26 @@
+<div class="hero-section py-5" data-controller="hero">
+  <div class="container text-center">
+    <h1 class="display-3 mb-3">HackTheBias 2025</h1>
+    <p class="lead mb-4">A 36-hour hackathon focused on equity, inclusion, and innovation.</p>
+
+    <div class="countdowns mb-4">
+      <div data-hero-target="countdown" class="countdown-wrapper">Loading countdown...</div>
+    </div>
+  
+    <div>
+      Participants:
+      <div class="odometer">0</div>
+    </div>
+
+    <a href="#register" class="btn btn-lg">Register Now</a>
+  </div>
+</div>
+
+<script>
+  let count = 0;
+
+  function incrementTest() {
+    count++;
+    document.getElementById("odometer-display").innerText = count;
+  }
+</script>

@@ -14,25 +14,3 @@ development:
 test:
   <<: *default
   database: hackthebias_test
-
-production:
-  primary:
-    <<: *default
-    database: hackthebias_production
-    username: <%= Rails.application.credentials.DB_USER.prod_user %>
-    host: <%= Rails.application.credentials.DB_HOST.prod_host %>
-    password: <%= Rails.application.credentials.DB_PASSWORD.prod_db %>
-
-  queue:
-    <<: *default
-    database: hackthebias_production
-    username: <%= Rails.application.credentials.DB_USER.prod_user %>
-    host: <%= Rails.application.credentials.DB_HOST.prod_host %>
-    password: <%= Rails.application.credentials.DB_PASSWORD.prod_db %>
-
-  cable:
-    <<: *default
-    database: hackthebias_production
-    username: <%= Rails.application.credentials.DB_USER.prod_user %>
-    host: <%= Rails.application.credentials.DB_HOST.prod_host %>
-    password: <%= Rails.application.credentials.DB_PASSWORD.prod_db %>
